@@ -2,6 +2,7 @@ PROJECT_DIR=/usr/local/javaenv
 GIT_REPO=https://github.com/periket2000/gs-rest-service.git
 SRC_DIR=complete
 APP_FILE=target/gs-rest-service-0.1.0.jar
+BUILD_SOURCES=false
 
 # YOU CAN REMOVE BELOW VALUES
 # APPLICATION ENVIRONMENT (SAMPLE ENVIRONMENT VARS SUPPOSED TO BE USED BY GIT_REPO APPLICATION)

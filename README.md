@@ -29,6 +29,7 @@ PROJECT_DIR: where everything will be installed inside the container.
 GIT_REPO: the repo to download.
 SRC_DIR: the source folder inside the project.
 APP_FILE: entry point to python application.
+BUILD_SOURCES: compile app from sources and start or directly start (target/app-vxx.jar must exist).
 ```
 
 ## sample mesos application json, let's say py-docker.json (see doc/mesos/)
@@ -44,7 +45,8 @@ APP_FILE: entry point to python application.
               "PROJECT_DIR": "/usr/local/javaenv",
               "GIT_REPO": "https://github.com/periket2000/gs-rest-service.git",
               "SRC_DIR": "complete",
-              "APP_FILE": "target/gs-rest-service-0.1.0.jar"
+              "APP_FILE": "target/gs-rest-service-0.1.0.jar",
+              "BUILD_SOURCES": "false"
           },
           "container": {
             "type": "DOCKER",
