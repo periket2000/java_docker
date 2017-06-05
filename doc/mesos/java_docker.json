@@ -1,0 +1,38 @@
+        {
+          "id": "java-docker",
+          "instances": 1,
+          "cpus": 1,
+          "mem": 100,
+          "constraints": [["hostname", "UNIQUE", ""]],
+          "env": {
+              "PROJECT_DIR": "/usr/local/javaenv",
+              "GIT_REPO": "https://github.com/periket2000/gs-rest-service.git",
+              "SRC_DIR": "complete",
+              "APP_FILE": "target/gs-rest-service-0.1.0.jar"
+          },
+          "container": {
+            "type": "DOCKER",
+            "docker": {
+              "image": "periket2000/java_docker:v1.0",
+              "network": "BRIDGE",
+              "portMappings": [
+                {
+                  "containerPort": 8080,
+                  "hostPort": 0,
+                  "servicePort": 0,
+                  "protocol": "tcp"
+                }
+              ]
+            }
+          },
+          "healthChecks": [
+              {
+                "protocol": "HTTP",
+                "portIndex": 0,
+                "path": "/greeting",
+                "gracePeriodSeconds": 5,
+                "intervalSeconds": 20,
+                "maxConsecutiveFailures": 3
+              }
+            ]
+        }
