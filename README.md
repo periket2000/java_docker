@@ -39,7 +39,7 @@ BUILD_SOURCES: compile app from sources and start or directly start (target/app-
           "id": "java-docker",
           "instances": 1,
           "cpus": 1,
-          "mem": 100,
+          "mem": 1024,
           "constraints": [["hostname", "UNIQUE", ""]],
           "env": {
               "PROJECT_DIR": "/usr/local/javaenv",
